@@ -1,3 +1,14 @@
+const TelegramBot = require('node-telegram-bot-api');
+
+const token = '901936923:AAFGeTaEcZtlhNCpRkJHo4zvORJmo-dHpCM';
+const bot = new TelegramBot(token, {polling: true});
+
+bot.on("text", (message) =>{
+  if(message.text.toLowerCase().indexOf("hi") === 0){
+    bot.sendMessage(message.chat.id, "Hello comrade!");
+  }
+});
+
 var MongoClient = require('mongodb').MongoClient;
 
 var url = 'mongodb://localhost/';
